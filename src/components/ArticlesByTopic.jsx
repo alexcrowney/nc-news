@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
 import { ArticleCard } from "./ArticleCard";
+import { useParams } from "react-router-dom";
 
-const Articles = () => {
+const ArticlesByTopic = () => {
   const [articles, setArticles] = useState([]);
+
+  const topic = useParams().topic;
+
   useEffect(() => {
-    getArticles().then((articles) => {
+    getArticles(topic).then((articles) => {
       setArticles(articles);
     });
-  }, []);
+  }, [topic]);
 
   return (
     <div>
@@ -25,4 +29,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default ArticlesByTopic;
