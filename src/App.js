@@ -1,6 +1,7 @@
 import "./App.css";
 import Articles from "./components/articles.js";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import DropDown from "./components/DropDown";
 
 function App() {
   return (
@@ -9,8 +10,10 @@ function App() {
         <header className="App-header">
           <h1>NC News </h1>
         </header>
+        <DropDown />
         <Routes>
           <Route path="/" element={<Articles />} />
+          <Route path="/:topic" element={<Articles />} />
         </Routes>
       </div>
     </BrowserRouter>

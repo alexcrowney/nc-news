@@ -10,15 +10,15 @@ export const getArticles = () => {
   });
 };
 
-export const fetchArticleById = (article_id) => {
-  return newsApi.get(`/articles/${article_id}`).then((res) => {
-    return res.data.article;
+export const getTopics = () => {
+  return newsApi.get(`/topics`).then((res) => {
+    return res.data.topics;
   });
 };
 
-// export const getArticles = () => {
-//     return newsApi.get("/articles").then((res) => {
-//       console.log(res.data);
-//       return res.data;
-//     });
-//   };
+export const getTopicBySlug = () => {
+  return newsApi.get(`/topics/:topic`).then((res) => {
+    console.log(res.data);
+    //return res.data.topics;
+  });
+};

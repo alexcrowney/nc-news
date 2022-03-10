@@ -10,13 +10,12 @@ const Articles = () => {
     });
   }, []);
 
-  console.log("articles ---->", articles);
   return (
     <div>
       {articles.map((article) => {
         return (
           <ArticleCard
-            className="story"
+            className="article-card"
             key={article.title}
             article={article}
           />
