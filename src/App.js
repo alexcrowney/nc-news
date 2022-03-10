@@ -2,6 +2,7 @@ import "./App.css";
 import Articles from "./components/articles.js";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import DropDown from "./components/DropDown";
+import ArticlesByTopic from "./components/ArticlesByTopic";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <DropDown />
         <Routes>
           <Route path="/" element={<Articles />} />
-          <Route path="/:topic" element={<Articles />} />
+          <Route path="/:topic" element={<ArticlesByTopic />} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -21,20 +22,3 @@ function App() {
 }
 
 export default App;
-
-// <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
